@@ -4,11 +4,24 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import { createGlobalStyle } from 'styled-components';
+import reset from 'styled-reset';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+const GlobalStyles = createGlobalStyle`
+  ${reset}
+  * {
+    box-sizing: border-box;
+  }
+`; 
+
+
 root.render(
-  <React.StrictMode>
+  <>
+    <GlobalStyles />
     <App />
-  </React.StrictMode>
+  </>
 );
 
 // If you want to start measuring performance in your app, pass a function
